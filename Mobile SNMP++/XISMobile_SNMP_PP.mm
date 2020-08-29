@@ -476,7 +476,7 @@ using namespace Snmp_pp;
     if ( !udpAddress.valid() ) {
         *error = [self constructError:ERR_INVALID_DESTINATION];
 #ifdef DEBUG
-        NSLog(@"ERROR SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
+//        NSLog(@"ERROR SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
         NSLog(@"ERROR SNMP++ Invalid host address or IP: %@", hostAddress);
         NSLog(@"ERROR ====================");
 #endif
@@ -487,7 +487,7 @@ using namespace Snmp_pp;
     Oid localOid([oid UTF8String]);
     if ( !localOid.valid() ) {
 #ifdef DEBUG
-        NSLog(@"ERROR SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
+//        NSLog(@"ERROR SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
         NSLog(@"ERROR SNMP++ We got an invalid Oid (%@), we are starting at .1", oid);
         NSLog(@"ERROR ====================");
 #endif
@@ -498,7 +498,7 @@ using namespace Snmp_pp;
     
     if ( status != SNMP_CLASS_SUCCESS ) {
 #ifdef DEBUG
-        NSLog(@"ERROR SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
+//        NSLog(@"ERROR SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
         NSLog(@"ERROR SNMP++ Could not create session: %s", snmp.error_msg(status));
         NSLog(@"ERROR ====================");
 #endif
@@ -523,7 +523,7 @@ using namespace Snmp_pp;
     
     // Issue the request, in blocked mode
 #ifdef DEBUG
-    NSLog(@"DEBUG SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
+//    NSLog(@"DEBUG SNMPController (walkOid:address:snmpVersion:remotePort:withCommunity:retry:timeout:walkSubTreeOnly:error:)");
     NSLog(@"DEBUG SNMP++ Walk to %@ (start at oid: %@) with version %d on Port: %d using community %@ with retries %d and timeout %d (walk subTree: %@)", hostAddress, oid, version, [aPort integerValue], community, retries, timeout, (subTree) ? @"YES" : @"NO");
     NSLog(@"DEBUG SNMP++ What is the community we are sending.... %s", snmpCommunity.get_printable());
     NSLog(@"DEBUG ====================");
